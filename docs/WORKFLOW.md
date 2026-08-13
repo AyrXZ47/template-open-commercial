@@ -1,6 +1,6 @@
 # Flujo de trabajo AI Agents — de 0 a 100
 
-> Cómo hacer funcionar el workflow **planner → executors → merger → auditor**
+> Cómo hacer funcionar el workflow **planner → executors → integrator → auditor**
 > sobre este repositorio. La versión normativa vive en `AGENTS.md` +
 > `.workflow/`; este documento es el manual de operación humana.
 > Si este repo nació del template: ya tienes todo. Si es un repo viejo que
@@ -35,7 +35,7 @@
 FASE 0  Crear/actualizar el repo (template o scripts/apply-workflow.sh)
 FASE 1  PLANIFICAR   → agente planner  → plan.md + briefs de la ola 1
 FASE 2  EJECUTAR     → N executors paralelos, cada uno en su worktree/rama
-FASE 3  INTEGRAR     → agente merger   → merge de ramas a main + build/tests
+FASE 3  INTEGRAR     → agente integrator   → merge de ramas a main + build/tests
 FASE 4  AUDITAR      → agente auditor  → checklist sobre el árbol integrado
         ↳ APPROVED → siguiente ola (FASE 1, plan rodante)
         ↳ REJECTED → fixes + re-auditar
@@ -103,7 +103,7 @@ SOLO a su rama. Nunca toca archivos que no posee. Nunca toca main.
 
 ---
 
-## 5. FASE 3 — Integrar (rol MERGER)
+## 5. FASE 3 — Integrar (rol INTEGRATOR)
 
 Instancia nueva en el repo principal:
 
@@ -111,7 +111,7 @@ Instancia nueva en el repo principal:
 Mergea la ola 1 siguiendo el plan de integración.
 ```
 
-El merger: lee el plan, mergea las ramas en orden (`--no-ff`), corre
+El integrator: lee el plan, mergea las ramas en orden (`--no-ff`), corre
 build/tests, pushea main. Ante un conflicto: PARA y reporta (nunca resuelve
 con criterio propio). Después: `git worktree remove` de los worktrees usados.
 
@@ -155,7 +155,7 @@ Criterio: 0 CRITICAL/HIGH o excepciones documentadas con dueño y fecha en
 |-----|-------------|--------------|
 | Planner | repo principal | la idea del proyecto |
 | Executor | su worktree | "Soy el executor K de la ola N. Lee mi brief y ejecuta." |
-| Merger | repo principal | "Mergea la ola N siguiendo el plan de integración." |
+| Integrator | repo principal | "Mergea la ola N siguiendo el plan de integración." |
 | Auditor | repo principal (sesión nueva) | "Audita la ola N sobre el árbol integrado." |
 | Security | repo principal | "Security audit this codebase. Output a <dir>." |
 
