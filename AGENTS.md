@@ -59,6 +59,7 @@ This repo runs a multi-instance wave workflow. The plan and every handoff live i
 - One logical change per commit. `feat:`/`fix:` change behavior; `chore:` doesn't.
 - Executors commit ONLY their owned files, one commit per task.
 - **Branch isolation (mandatory):** every executor commits AND pushes ONLY to its own worktree branch. Never push to `main` or to another executor's branch; never merge, rebase, or fast-forward anyone else's branch. `git push origin <your-branch>` after each commit, so the work survives the session without touching parallel instances.
+- **Territory (mandatory):** an executor never leaves its worktree (`cd`) and never runs `git checkout`, `git switch`, `git branch`, `git worktree`, or `git stash`. It works on the branch its worktree was created with, and on no other — it does not invent or switch branches. Git itself blocks checking out a branch already used by another worktree; treat that error as "report, don't retry".
 - Committing is not a reward: if the diff can't be described in one short line, split it.
 
 ## Skills in this repo
