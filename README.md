@@ -19,10 +19,10 @@ This template is optimized for AI-agent-driven development. Everything an agent 
 2. Empty `.workflow/plan.md` (keep the structure), set your README.
 3. Open your AI agent in the repo and switch to the **planner** role (in OpenCode: `Tab`), then paste your project idea. The planner writes the plan and the wave-1 briefs.
 4. Review `plan.md`, approve wave 1, then launch one **executor** per brief in its own `git worktree`.
-5. Integrate with the **merger** role, audit with the **auditor** role (fresh session), repeat per wave.
+5. Integrate with the **integrator** role, audit with the **auditor** role (fresh session), repeat per wave.
 6. Before distributing anything: run the **security-audit** skill.
 
-Roles in OpenCode (if you use it): switch with `Tab` — `planner`, `executor`, `merger`, `auditor` — each with its own model and prompt already loaded. Full details in [`docs/WORKFLOW.md`](docs/WORKFLOW.md).
+Roles in OpenCode (if you use it): switch with `Tab` — `planner`, `executor`, `integrator`, `auditor` — each with its own model and prompt already loaded. Full details in [`docs/WORKFLOW.md`](docs/WORKFLOW.md).
 
 ### Commit convention (mandatory)
 
@@ -47,7 +47,7 @@ Every commit in this repo follows conventional commits with a short one-line sum
 
 Skills load automatically when you ask for the trigger — zero setup.
 
-The workflow in one line: **planner plans one wave → parallel executors in worktrees → merger integrates → auditor checks the integrated tree → next wave**. See `docs/WORKFLOW.md` for the full protocol.
+The workflow in one line: **planner plans one wave → parallel executors in worktrees → integrator integrates → auditor checks the integrated tree → next wave**. See `docs/WORKFLOW.md` for the full protocol.
 
 ## 📜 Project Licenses
 
