@@ -15,6 +15,7 @@ Every commit in this repo follows conventional commits with a short one-line sum
 - `feat:`, `fix:`, `chore:`, `docs:`, `refactor:`, `test:`, `perf:`, `style:`, `build:`, `ci:`, `revert:` — optional `(scope)`, imperative, lowercase, under ~72 chars.
 - One logical change per commit. No AI attribution, no trailers.
 - `feat:`/`fix:` change behavior; `chore:` doesn't.
+- **Executors:** commit and push ONLY to your own worktree branch (`git push origin <your-branch>`). Never touch `main` or another executor's branch — parallel instances must never be affected.
 
 ### Skills
 - **`skills/`** — on-demand skills, loaded only when triggered:

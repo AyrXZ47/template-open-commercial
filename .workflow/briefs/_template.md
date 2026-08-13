@@ -41,6 +41,10 @@ if this can be one line, it is one line.>
   No AI attribution, no trailers.
 - One logical change per commit. One commit per task.
 - Commit ONLY your owned files.
+- BRANCH ISOLATION (mandatory): commit and push ONLY to your own worktree
+  branch — `git push origin <your-branch>` — after each commit. Never push to
+  `main` or another branch; never merge, rebase, or fast-forward anyone
+  else's branch. Your branch is yours; theirs are theirs.
 
 ## Report back
 
